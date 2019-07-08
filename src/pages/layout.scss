@@ -1,0 +1,95 @@
+@import '~@/styles/main';
+@import '~Components/Header/Header';
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.page-header,
+.page-left,
+.page-center,
+.page-right {
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+.page-left,
+.page-center,
+.page-right {
+  display: flex;
+  flex-direction: column;
+}
+.page-header {
+  width: 100%;
+  margin: 2rem 0;
+}
+.page-middle {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.page-left {
+  flex: 1 1;
+}
+.page-center {
+  flex: 4 1;
+  width: 100%;
+  overflow: hidden;
+}
+.page-right {
+  flex: 1 1;
+}
+.page-subtitle {
+  font-size: 2rem;
+  margin: 0 0 2rem 0;
+  display: flex;
+}
+.page-blockText {
+  margin-bottom: 2rem;
+}
+
+.page-link {
+  font-size: 1.6rem;
+}
+.page-link_active {
+  color: #2980b9;
+  &:hover {
+    color: #e74c3c;
+  }
+}
+
+.page-block:not(:last-of-type) {
+  margin-bottom: 6rem;
+}
+
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .page-left,
+  .page-center,
+  .page-right {
+    width: 100%;
+    flex: initial;
+  }
+  .page-left {
+    margin-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .page-center,
+  .page-header,
+  .page-left,
+  .page-right {
+    padding: 0 1rem;
+  }
+}

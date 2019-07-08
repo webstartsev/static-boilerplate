@@ -1,0 +1,59 @@
+.Menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #7f8c8d;
+}
+.Menu-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+}
+.Menu-item {
+  width: 15%;
+  white-space: nowrap;
+}
+.Menu-link {
+  position: relative;
+  padding: 15px 30px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  &:hover {
+    background: #ffffff60;
+    text-decoration: none;
+  }
+}
+.Menu-link_active {
+  background: #ffffff60;
+}
+
+@media screen and (max-width: 1280px) {
+  .Menu-item {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Menu-item {
+    width: initial;
+  }
+  .Menu-link {
+    padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Menu {
+    overflow: hidden;
+  }
+  .Menu-list {
+    justify-content: flex-start;
+    overflow-x: scroll;
+  }
+}

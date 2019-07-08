@@ -1,0 +1,12 @@
+@import '~Components/Menu/Menu';
+
+.Header {
+  height: 120px;
+  background: #95a5a6;
+}
+.Header-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}

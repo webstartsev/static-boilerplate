@@ -1,0 +1,21 @@
+include /../node_modules/bemto.pug/bemto.pug
+- set_bemto_settings({ prefix: '', element: '-', modifier: '_' });
+
+include ../components/Header/Header.pug
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name='imagetoolbar' content='no')
+        meta(name='msthemecompatible' content='no')
+        meta(name='cleartype' content='on')
+        meta(name='HandheldFriendly' content='True')
+        meta(name="msapplication-TileColor" content='#ffffff')
+        meta(name='theme-color' content='#ffffff')
+    +b.BODY.page
+        +Header()
+        +e.content
+            block content

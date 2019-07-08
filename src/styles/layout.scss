@@ -1,0 +1,95 @@
+/*--------------------------------------------------------------
+# Basic layout tweaks
+--------------------------------------------------------------*/
+
+html {
+  box-sizing: border-box;
+  font-size: 8px;
+  cursor: default;
+
+  @media (min-width: $md) {
+    font-size: 9px;
+  }
+  @media (min-width: $lg) {
+    font-size: 10px;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  color: $color_text;
+  font-family: $ff_main;
+  background-color: $color_bg;
+  font-weight: $fw_default;
+  line-height: $line_height;
+}
+
+a {
+  color: $color_text;
+  text-decoration: none;
+  transition: color $transition_default_timing;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p,
+strong {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+
+  strong {
+    line-height: 1.3;
+  }
+}
+
+/*--------------------------------------------------------------
+# Utility classes
+--------------------------------------------------------------*/
+
+.db {
+  display: block;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+
+  @media (min-width: $xl) {
+    padding-bottom: 49.25%;
+  }
+}
+
+.responsive-video__video,
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+# Layout classes
+--------------------------------------------------------------*/

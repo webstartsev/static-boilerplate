@@ -1,0 +1,191 @@
+@-ms-viewport {
+    width: device-width
+}
+
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar
+}
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit
+}
+
+/**
+* Grid
+*/
+$grid: (
+    "sm": (
+        viewport: 576px,
+        gutters: 15px,
+        columns: 12,
+        container: 540px,
+    ),
+    "md": (
+        viewport: 768px,
+        container: 720px,
+    ),
+    "lg": (
+        viewport: 992px,
+        container: 960px,
+    ),
+    "xl": (
+        viewport: 1280px,
+        container: 1240px,
+    )
+);
+
+$base: map-get($grid, 'sm');
+
+/**
+** @block Grid
+*/
+.grid {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: map-get($base, 'gutters');
+    padding-left: map-get($base, 'gutters');
+}
+
+@each $name, $breakpoint in $grid {
+    @media (min-width: map-get($breakpoint, 'viewport')) {
+
+        @if map-has-key($breakpoint, 'gutters') {
+            .grid {
+                padding-left: map-get($breakpoint, 'gutters');
+                padding-right: map-get($breakpoint, 'gutters');
+            }
+        }
+
+        .grid {
+            width: map-get($breakpoint, 'container');
+            max-width: 100%
+        }
+
+        .grid--fluid {
+            width: 100%;
+            max-width: none;
+        }
+    }
+}
+
+/**
+** @block Row
+*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -(map-get($base, gutters));
+    margin-left: -(map-get($base, gutters));
+
+    &--centred {
+        justify-content: center;
+        text-align: center;
+    }
+
+    &--align_center {
+        align-items: center;
+    }
+
+    &--justify_end {
+        justify-content: flex-end;
+    }
+
+    &--gutters_none {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+
+        & > .col {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &--wrap_none {
+        flex-wrap: nowrap;
+    }
+}
+
+@each $name, $breakpoint in $grid {
+    @media (min-width: map-get($breakpoint, 'viewport')) {
+        @if map-has-key($breakpoint, 'gutters') {
+            .row {
+                margin-left: -(map-get($breakpoint, 'gutters'));
+                margin-right: -(map-get($breakpoint, 'gutters'));
+            }
+        }
+    }
+}
+
+/**
+** @block Col
+** @private of Row
+*/
+.col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: map-get($base, 'gutters');
+    padding-left: map-get($base, 'gutters');
+
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    &--auto {
+        flex: 0 0 auto;
+        width: auto
+    }
+}
+
+@for $i from 1 through map-get($base, 'columns') {
+    .col--#{$i} {
+        flex: 0 0 $i * (100% / map-get($base, 'columns'));
+        max-width: $i * (100% / map-get($base, 'columns'));
+    }
+    .offset--#{$i} {
+        margin-left: $i * (100% / map-get($base, 'columns'));
+    }
+}
+
+@each $name, $breakpoint in $grid {
+    @media (min-width: map-get($breakpoint, 'viewport')) {
+
+        @for $i from 1 through map-get($base, 'columns') {
+            .col--#{$name}_#{$i} {
+                flex: 0 0 $i * (100% / map-get($base, 'columns'));
+                max-width: $i * (100% / map-get($base, 'columns'));
+            }
+            .offset--#{$name}_#{$i} {
+                margin-left: $i * (100% / map-get($base, 'columns'));
+            }
+        }
+
+        @if map-has-key($breakpoint, 'gutters') {
+            .col {
+                padding-right: map-get($breakpoint, 'gutters');
+                padding-left: map-get($breakpoint, 'gutters');
+            }
+        }
+
+        .col--#{$name}_auto {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+        }
+
+        .col--#{$name}_grow {
+            flex: 1 0 0; 
+            max-width: 100%;
+        }
+
+        .offset--#{$name}_0 {
+            margin-left: 0;
+        }
+
+    }
+}

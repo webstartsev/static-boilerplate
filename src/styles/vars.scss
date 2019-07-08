@@ -1,0 +1,45 @@
+/**
+* Breakpoints 
+*/
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1280px;
+
+$xs_down: $xs - 1px;
+$sm_down: $sm - 1px;
+$md_down: $md - 1px;
+$lg_down: $lg - 1px;
+$xl_down: $xl - 1px;
+
+/**
+* Typeography 
+*/
+$fz_text: 1.6rem;
+
+$fz_heading_lg: 5.4rem;
+$fz_heading_md: 3.2rem;
+$fz_heading_sm: 2.4rem;
+$fw_default: 400;
+
+$ff_main: 'PT Serif', sans-serif;
+$ff_accent: 'Roboto', sans-serif;
+
+$line-height: 1.45;
+
+/**
+* Colors 
+*/
+$color_text: #333;
+$color_text_faded: rgba(#333, 0.5);
+$color_accent_1: #fff;
+
+$color_bg: #fff;
+$transition_default_timing: 0.3s;
+
+/**
+* Indent 
+*/
+$section_indent: 70px;
+$title_indent: 40px;
