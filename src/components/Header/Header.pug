@@ -1,7 +1,8 @@
-include ../Menu/Menu.pug
+include ../menu/menu.pug
+include ../logo/logo.pug
 
-mixin Header()
-  +b.HEADER.Header
-    +e.wrap
-      +e.bottom
-        +Menu()
+mixin header()
+  +b.HEADER.header
+    +e.wrap  
+        +logo   
+        +menu()        

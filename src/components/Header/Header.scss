@@ -1,12 +1,14 @@
-@import '~Components/Menu/Menu';
+@import '~Components/menu/menu';
+@import '~Components/logo/logo';
 
-.Header {
-  height: 120px;
-  background: #95a5a6;
+.header {  
+  background: $header_bg;  
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
-.Header-wrap {
+
+.header-wrap {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
+  width: 1140px;  
+  margin: 0 auto;
 }

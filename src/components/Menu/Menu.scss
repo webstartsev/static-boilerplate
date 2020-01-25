@@ -1,59 +1,66 @@
-.Menu {
-  width: 100%;
+.menu {  
   display: flex;
   align-items: center;
-  background: #7f8c8d;
 }
-.Menu-list {
+
+.menu-list {
   padding: 0;
   margin: 0;
   list-style: none;
   display: flex;
   position: relative;
-  width: 100%;
-  justify-content: center;
 }
-.Menu-item {
-  width: 15%;
+
+.menu-item {
+  position: relative;
+  padding-right: 27px;
   white-space: nowrap;
 }
-.Menu-link {
+
+.menu-link {
   position: relative;
-  padding: 15px 30px;
   display: block;
   text-align: center;
-  color: #fff;
-  font-size: 1.8rem;
-  &:hover {
-    background: #ffffff60;
-    text-decoration: none;
-  }
-}
-.Menu-link_active {
-  background: #ffffff60;
-}
-
-@media screen and (max-width: 1280px) {
-  .Menu-item {
-    width: 20%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .Menu-item {
-    width: initial;
-  }
-  .Menu-link {
-    padding: 15px 20px;
-  }
+  font-family: $ff_main;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+    &:hover {
+      font-color: $color_text;
+      text-decoration: none;
+  }    
+    &:last-child {
+     font-size: 10px;
+  }    
 }
 
-@media screen and (max-width: 800px) {
-  .Menu {
-    overflow: hidden;
+.menu-link_phone:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -24px;
+    width: 19px;
+    height: 14px;
+    background-image: url(../images/phone.png);
+    background-position: center center;
+    background-repeat: no-repeat;
   }
-  .Menu-list {
-    justify-content: flex-start;
-    overflow-x: scroll;
+
+.menu-link_address:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -24px;
+    width: 19px;
+    height: 14px;
+    background-image: url(../images/address.png);
+    background-position: center center;
+    background-repeat: no-repeat;
   }
-}
+
+
+  

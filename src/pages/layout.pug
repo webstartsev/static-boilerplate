@@ -1,7 +1,7 @@
 include /../node_modules/bemto.pug/bemto.pug
 - set_bemto_settings({ prefix: '', element: '-', modifier: '_' });
 
-include ../components/Header/Header.pug
+include ../components/header/header.pug
 
 doctype html
 html(lang="ru")
@@ -15,7 +15,9 @@ html(lang="ru")
         meta(name='HandheldFriendly' content='True')
         meta(name="msapplication-TileColor" content='#ffffff')
         meta(name='theme-color' content='#ffffff')
+
+  
     +b.BODY.page
-        +Header()
+        +header()
         +e.content
             block content
