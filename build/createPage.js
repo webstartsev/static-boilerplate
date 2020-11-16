@@ -19,8 +19,7 @@ writeFileSync(`${pagePath}/${pageName}.scss`, '');
 //markup
 writeFileSync(
     `${pagePath}/${pageName}.pug`,
-    `
-extends ../layout.pug 
+    `extends ../layout.pug 
 block content 
   +e.H1 ${pageName} 
 `

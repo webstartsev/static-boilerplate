@@ -1,9 +1,15 @@
-module.exports = ({ env }) => ({
-    plugins: {
-        'postcss-flexbugs-fixes': {},
-        autoprefixer: {
-            flexbox: 'no-2009'
-        },
-        cssnano: env === 'production' ? {} : false
-    }
-});
+module.exports = {
+  plugins: [
+    require('autoprefixer'),
+    require('css-mqpacker'),
+    require('cssnano')({
+      preset: [
+        'default', {
+          discardComments: {
+            removeAll: true
+          }
+        }
+      ]
+    })
+  ]
+}
