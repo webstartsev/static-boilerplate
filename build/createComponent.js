@@ -19,8 +19,7 @@ writeFileSync(`${componentPath}/${componentName}.scss`, '');
 //markup
 writeFileSync(
     `${componentPath}/${componentName}.pug`,
-    `
-mixin ${componentName}()
+    `mixin ${componentName}()
   +b.${componentName}
 `
 );
